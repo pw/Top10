@@ -1,0 +1,15 @@
+<h1>Top 10</h1>
+<turbo-frame id="city" target="_top">
+  <h3 style="margin-top: 0rem; margin-bottom: 0.5rem;"><%= "#{@city.name}, #{@city.state}"%></h3>
+  <%= link_to 'Change City', root_path, 'data-turbo-frame' => '_self' %>
+</turbo-frame>
+<%= form_with url: attractions_city_path(@city), method: :post, html: {style: "padding-top: 0.75rem;"}  do |form| %>
+  <%= form.select(:category, 
+    [['Restaurants', 'restaurants'], ['Axe Throwing', 'axethrowing'], ['Spas', 'spas'], ['Nightlife', 'nightlife'], ['Art Galleries', 'galleries']],
+    { selected: (params[:category] || 'restaurants') },
+    { onchange: "this.form.requestSubmit()" }
+  ) %>
+<% end %>
+<div id="attractions">
+  <%= render partial: "cities/attractions", locals: {attractions: @attractions} %>
+</div>

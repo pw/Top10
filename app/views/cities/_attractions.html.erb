@@ -1,0 +1,9 @@
+<% if !attractions.empty? %>
+  <ol>
+    <% attractions.each do |attraction| %>
+      <li><%= attraction['name'] %></li>
+    <% end %>
+  </ol>
+<% else %>
+  <p>Sorry, we couldn't find anything for that category</p>
+<% end %>

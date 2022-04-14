@@ -1,0 +1,6 @@
+<% cities.each do |city| %>
+  <br>
+  <%= link_to city do %>
+    <%= "#{city.name}, #{city.state}" %>
+  <% end %>
+<% end %>
