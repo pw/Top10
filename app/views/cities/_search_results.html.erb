@@ -1,6 +1,3 @@
 <% cities.each do |city| %>
-  <br>
-  <%= link_to city do %>
-    <%= "#{city.name}, #{city.state}" %>
-  <% end %>
+  <p style='margin: 0.25rem;'><%= link_to "#{city.name}, #{city.state}", city %></p>
 <% end %>
