@@ -1,4 +1,3 @@
-<h1>Top 10</h1>
 <turbo-frame id="city" target="_top">
   <h3 style="margin-top: 0rem; margin-bottom: 0.5rem;"><%= "#{@city.name}, #{@city.state}"%></h3>
   <%= link_to 'Change City', root_path, 'data-turbo-frame' => '_self' %>
